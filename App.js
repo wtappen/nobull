@@ -3,6 +3,9 @@ import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TrackStart from './TrackStart';
+import NoBull from './NoBull';
+import BillSummary from './BillSummary';
 
 
 function HomeScreen({ navigation }) {
@@ -35,6 +38,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="NoBull" component={NoBull} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="AnotherScreen" component={AnotherScreen} />
       </Stack.Navigator>

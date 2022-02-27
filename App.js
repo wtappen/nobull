@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CameraView from './cameraview';
 
 
 function HomeScreen({ navigation }) {
@@ -12,8 +13,7 @@ function HomeScreen({ navigation }) {
       <Button
         title="Go to another screen!"
         onPress={() => {
-          console.log("YOOO");
-          navigation.navigate('AnotherScreen')
+          navigation.navigate('CameraView')
         }}
       >
       </Button>
@@ -42,11 +42,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

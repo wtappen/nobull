@@ -6,30 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import NoBull from './NoBull';
 import CameraView from './cameraview';
 import BillSummary from './BillSummary';
-
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to another screen!"
-        onPress={() => {
-          navigation.navigate('CameraView')
-        }}
-      >
-      </Button>
-    </View>
-  );
-}
-
-function AnotherScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>ANOTHER Screen</Text>
-    </View>
-  );
-}
+import LoadingView from './loadingview';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,11 +14,15 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="NoBull" component={NoBull} />
-        <Stack.Screen name="Camera" component={CameraView} />
-        <Stack.Screen name="BillSummary" component={BillSummary} />
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="AnotherScreen" component={AnotherScreen} />
+        <Stack.Screen name="NoBull" component={NoBull} options={{ title: '' }} />
+        <Stack.Screen name="Camera" component={CameraView} options={{ title: 'Scan Bill' }}/>
+        <Stack.Screen name="BillSummary" component={BillSummary}
+          options={({navigation}) => ({
+            title: '',
+            headerLeft: () => <Button title="Home" onPress={() => navigation.navigate('NoBull')} />,
+          })}
+        />
+        <Stack.Screen name="Loading" component={LoadingView} />
       </Stack.Navigator>
     </NavigationContainer>
   );

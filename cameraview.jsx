@@ -30,9 +30,9 @@ export default function CameraView({ navigation }) {
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity
                         style={styles.shutterButton}
-                        onPress={() => {
-                            camera.current.takePictureAsync()
-                            navigation.navigate('BillSummary')
+                        onPress={async () => {
+                            await camera.current.takePictureAsync()
+                            navigation.navigate('Loading')
                         }}>
                     </TouchableOpacity>
                 </View>

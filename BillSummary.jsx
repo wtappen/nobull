@@ -39,7 +39,7 @@ function BullSummary({ navigation }) {
           style={{
             fontWeight: 'bold',
             color: '#02adba',
-            textDecoration: 'underline',
+            // textDecoration: 'underline',
             fontSize: 18,
             paddingRight: 5
           }}
@@ -86,7 +86,7 @@ function BullSummary({ navigation }) {
           <Text
             style={{
               fontWeight: 'bold',
-              fontSize: '20px',
+              fontSize: 20,
             }}>
             Duplicate charge
           </Text>
@@ -94,7 +94,7 @@ function BullSummary({ navigation }) {
         </View>
         <Text
           style={{
-            fontSize: '18px'
+            fontSize: 18
           }}
         >
           You were charged twice for your X-rays
@@ -110,7 +110,7 @@ function BullSummary({ navigation }) {
           <Text
             style={{
               fontWeight: 'bold',
-              fontSize: '20px',
+              fontSize: 20,
             }}>
             Ballance billing
           </Text>
@@ -118,13 +118,12 @@ function BullSummary({ navigation }) {
         </View>
         <Text
           style={{
-            fontSize: '18px'
+            fontSize: 18
           }}
         >
           Legally, under the No Surprise Act, you are protected against out of network billing
         </Text>
       </Card>
-
     </ View>
   );
 }

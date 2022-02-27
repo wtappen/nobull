@@ -1,7 +1,5 @@
-import { withNavigation } from 'react-navigation';
-import { Button, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { Card } from 'react-native-shadow-cards';
-import { textDecorationColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 function NoBull({ navigation }) {
   return (
@@ -45,7 +43,7 @@ function NoBull({ navigation }) {
           </Text>
         </View>
         <TouchableOpacity
-          onPress={() => navigation.navigate('BillSummary')}
+          onPress={() => navigation.navigate('Camera')}
           style={{
             borderWidth: 1,
             padding: 5,

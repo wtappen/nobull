@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TrackStart from './TrackStart';
 import NoBull from './NoBull';
+import CameraView from './cameraview';
 import BillSummary from './BillSummary';
 
 
@@ -15,8 +15,7 @@ function HomeScreen({ navigation }) {
       <Button
         title="Go to another screen!"
         onPress={() => {
-          console.log("YOOO");
-          navigation.navigate('AnotherScreen')
+          navigation.navigate('CameraView')
         }}
       >
       </Button>
@@ -39,6 +38,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="NoBull" component={NoBull} />
+        <Stack.Screen name="Camera" component={CameraView} />
+        <Stack.Screen name="BillSummary" component={BillSummary} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="AnotherScreen" component={AnotherScreen} />
       </Stack.Navigator>
@@ -46,11 +47,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
